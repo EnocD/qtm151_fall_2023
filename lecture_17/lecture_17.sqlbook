@@ -26,19 +26,22 @@ United States Congress dataset
 -- SQLBook: Markup
 # <span style="color:darkblue"> II. Create and Activate a New Database </span>
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@postgres
+-- Active: 1698696547471@@127.0.0.1@5432@postgres
 
 DROP DATABASE IF EXISTS us_congress;
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@us_congress
+-- Active: 1698696547471@@127.0.0.1@5432@postgres
+CREATE DATABASE us_congress;
+-- SQLBook: Code
+-- Active: 1698696547471@@127.0.0.1@5432@us_congress
 CREATE SCHEMA bills;
 
 CREATE SCHEMA members;
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@formula1
+-- Active: 1698696547471@@127.0.0.1@5432@postgres
 DROP TABLE IF EXISTS results;
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@postgres
+-- Active: 1698696547471@@127.0.0.1@5432@postgres
 DROP TABLE IF EXISTS races;
 -- SQLBook: Markup
 <font size = "5">
@@ -47,7 +50,7 @@ DROP TABLE IF EXISTS races;
 
 - Click on the ```Active Connection``` button and choose the correct database
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@us_congress
+-- Active: 1698696547471@@127.0.0.1@5432@us_congress
 DROP TABLE IF EXISTS bills.bills_actions;
 DROP TABLE IF EXISTS bills.bills_subjects;
 DROP TABLE IF EXISTS members.us_congress_members;
@@ -145,6 +148,7 @@ Use the following code to view the datasets: us_congress_members, bills_subjects
 SELECT * FROM schemas_name.tables_name
 ```
 -- SQLBook: Code
+-- Active: 1698696547471@@127.0.0.1@5432@us_congress
 -- Write your own code
 SELECT * FROM members.us_congress_members;
 -- SQLBook: Markup
@@ -159,6 +163,7 @@ Import the data before proceeding!
 
 Count unique rows
 -- SQLBook: Code
+-- Active: 1698696547471@@127.0.0.1@5432@us_congress
 -- COUNT(DISTINCT ) computes the number of unique rows
 -- "AS" is the alias or name of the statistic
 
@@ -169,6 +174,7 @@ FROM members.us_congress_members
 <font size = "5">
 Display unique rows
 -- SQLBook: Code
+-- Active: 1698696547471@@127.0.0.1@5432@us_congress
 SELECT party_name       
 FROM members.us_congress_members
 GROUP BY party_name
@@ -177,7 +183,7 @@ GROUP BY party_name
 
 Count members of group
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@us_congress
+-- Active: 1698696547471@@127.0.0.1@5432@us_congress
 SELECT party_name,       
        COUNT(*) AS num_members       
 FROM members.us_congress_members
@@ -187,6 +193,7 @@ GROUP BY party_name;
 
 Merge Databases
 -- SQLBook: Code
+-- Active: 1698696547471@@127.0.0.1@5432@us_congress
 -- FROM indicates the primary table
 -- LEFT JOIN indicates the secondary table for merging
 -- ON ... = ... is the matching column
